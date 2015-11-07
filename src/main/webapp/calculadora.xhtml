@@ -1,0 +1,25 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+    </h:head>
+    <h:body>
+        <h:form>
+            Operador 1: <h:inputText id="opeA"
+                                     value="#{sumaBean.opeA}"></h:inputText><br />
+            Operador 2: <h:inputText id="opeB"
+                                     value="#{sumaBean.opeB}"></h:inputText><br />
+            Operación:
+            <h:selectOneMenu value="#{sumaBean.operacion}">
+                <f:selectItem itemValue="sum" itemLabel="Sumar" />
+                <f:selectItem itemValue="res" itemLabel="Restar" />
+                <f:selectItem itemValue="mul" itemLabel="Multiplicar" />
+                <f:selectItem itemValue="div" itemLabel="Dividir" />
+            </h:selectOneMenu> <br/>
+            <h:commandButton value="Calcular"
+                             action="#{sumaBean.calcular}"></h:commandButton>
+        </h:form>
+        El resultado es: #{sumaBean.total}
+    </h:body>
+</html>
